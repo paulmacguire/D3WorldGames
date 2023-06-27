@@ -1,18 +1,18 @@
 body {
-    margin: 0 auto;
-    /* Puedes cambiar el color de fondo (background-color) si lo deseas */
-    background-color: #fffefc;
-    max-width: 1200px;
-    min-width: 500px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  }
-  
-  /* Completar este archivo con los que estime conveniente */
-  
+  margin: 0 auto;
+  /* Puedes cambiar el color de fondo (background-color) si lo deseas */
+  background-color: #fffefc;
+  max-width: 1200px;
+  min-width: 500px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+/* Completar este archivo con los que estime conveniente */
+
 .tooltip {
   position: absolute;
   text-align: center;
@@ -25,7 +25,7 @@ body {
 }
 
 .country {
-  fill: #a1a1a1;
+  fill: #b3b2b2;
   stroke: #333333;
   stroke-width: 0.8;
 }
@@ -34,9 +34,12 @@ body {
   fill: rgba(255, 0, 0, 0.623);
 }
 
+
+
 .highlighted {
   fill: lightblue;
 }
+
 
 .game-list {
   list-style-type: none;
