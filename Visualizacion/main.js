@@ -28,6 +28,20 @@ const contenedorPrimeraVisualizacion = SVG1.append("g").attr(
   `translate(${MARGIN.left}, ${MARGIN.top})`
 );
 
+let VGSalesData; // Variable para almacenar los datos JSON parseados
+
+fetch("vgsales.json")
+  .then((response) => response.json())
+  .then((data) => {
+    VGSalesData = data; // Almacena los datos parseados en la variable "VGSalesData"
+    // Puedes realizar cualquier operación o manipulación de datos aquí
+    console.log(VGSalesData);
+    // Llamar a funciones, procesar los datos, etc.
+  })
+  .catch((error) => {
+    console.error("Error al obtener el archivo JSON:", error);
+  });
+
 function createVGMap() {
   Promise.all([d3.json("world.topojson")])
     .then(([worldData]) => {
@@ -112,6 +126,16 @@ function createVGMap() {
     const excludedCountriesUSA = ["United States of America"];
     const excludesCountriesJapan = ["Japan"];
 
+    function getTopGamesByRegion(region) {
+      // Filtrar los juegos por región y ordenar por ventas descendentes
+      const games = VGSalesData.filter((game) => game[region] > 0).sort(
+        (a, b) => b[region] - a[region]
+      );
+
+      // Tomar los primeros 30 juegos
+      return games.slice(0, 30);
+    }
+
     contenedorPrimeraVisualizacion
       .selectAll(".country")
       .data(countries)
@@ -167,20 +191,50 @@ function createVGMap() {
             .classed("highlighted", false);
         }
 
-          // Verificar si el país es uno de Europa
+        // Verificar si el país es uno de Europa
         if (excludedCountriesEurope.includes(countryName)) {
-            // Eliminar estilos de resaltado de todos los países de Europa
-            contenedorPrimeraVisualizacion
+          // Eliminar estilos de resaltado de todos los países de Europa
+          contenedorPrimeraVisualizacion
             .selectAll(".country")
             .classed("selected", false);
         }
 
         clickedCountry.classed("selected", false);
-      });
+      })
+      .on("click", (event, d) => {
+        const clickedCountry = d3.select(event.currentTarget);
+        const countryName = d.properties.name;
 
-    // Hacer algo con los datos cargados
-    console.log(worldData);
-    console.log(countries);
+        let region = "Other_Sales"; // Por defecto, mostrar las ventas globales
+
+        // Verificar la región correspondiente al país clickeado
+        if (excludedCountriesUSA.includes(countryName)) {
+          region = "NA_Sales";
+        } else if (excludedCountriesEurope.includes(countryName)) {
+          region = "EU_Sales";
+        } else if (excludesCountriesJapan.includes(countryName)) {
+          region = "JP_Sales";
+        }
+        const topGames = getTopGamesByRegion(region);
+
+        // Vaciar la lista de juegos
+        d3.select("#gameList").html("");
+
+        // Añadir el título
+        d3.select("#gameList")
+        .append("h2")
+        .text("Top 30 juegos más vendidos");
+
+        // Agregar cada juego a la lista
+        d3.select("#gameList")
+          .selectAll("li")
+          .data(topGames)
+          .enter()
+          .append("li")
+          .html((d) => {
+            return `<strong>${d.Name}</strong> (${d.Platform}) - ${d.Publisher} - ${d.Genre} - ${d.Year}`;
+          });
+      });
   }
 }
 

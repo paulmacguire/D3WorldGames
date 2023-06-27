@@ -37,3 +37,23 @@ body {
 .highlighted {
   fill: lightblue;
 }
+
+.game-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.game-list li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.game-list li:last-child {
+  border-bottom: none;
+}
+
+.game-list li:hover {
+  background-color: #f0f0f0;
+}
