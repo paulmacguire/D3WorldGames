@@ -1,0 +1,65 @@
+body {
+  margin: 0 auto;
+  /* Puedes cambiar el color de fondo (background-color) si lo deseas */
+  background-color: #fffefc;
+  max-width: 1200px;
+  min-width: 500px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+/* Completar este archivo con los que estime conveniente */
+
+.tooltip {
+  position: absolute;
+  text-align: center;
+  padding: 2px;
+  font: 12px sans-serif;
+  background: white;
+  border: 0.5px solid gray;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.country {
+  fill: #b3b2b2;
+  stroke: #333333;
+  stroke-width: 0.8;
+}
+
+#vis-4 {
+  float: right;
+}
+
+
+.highlighted-region {
+  fill: rgba(255, 0, 0, 0.623);
+}
+
+.highlighted {
+  fill: lightblue;
+}
+
+
+.game-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.game-list li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.game-list li:last-child {
+  border-bottom: none;
+}
+
+.game-list li:hover {
+  background-color: #f0f0f0;
+}
