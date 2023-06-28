@@ -643,6 +643,7 @@ function createVGGraph() {
 
     // Trasladar todo el contenedor más arriba
     contenedor.attr("transform", `translate(0, -500)`);
+    
   }
 }
 
