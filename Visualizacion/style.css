@@ -46,9 +46,14 @@ body {
   border: 1px solid black;
 }
 
+#vis-2 {
+  border: 1px solid black;
+}
+
 #vis-3{
+  margin-top: 100px;
   width: 1200px;
-  height: 800px;
+  height: 850px;
   border: 1px solid black;
 }
 

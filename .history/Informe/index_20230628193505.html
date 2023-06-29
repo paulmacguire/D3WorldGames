@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Proyecto</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Informe Proyecto</h1>
+        <p><i>Template</i> base confeccionar el informe. Se puede
+            modificar el estilo si así lo desean, pero se recomienda 
+            mantener las secciones separadas para facilitar la corrección del informe.</p>
+
+        <div class="response">
+            <h3>Integrantes</h2>
+                <p>Raimundo Fuchslocher</p>
+                <p>Paul Mac Guire</p>
+        </div>
+
+        <div class="case">
+            <h2>Situación de dominio</h2>
+                <div class="response">
+                    <h4>Contexto de la situación y la naturaleza de los datos</h4>
+                    <!-- Puedes agregar los P que sean necesarios -->
+                    <h4>Respuesta:</h4>
+                    <p>En este trabajo se mostrarán ciertas visualizaciones que estarán relacionadas con el mundo de los videojuegos, específicamente en cuanto a las ventas por región de cada videojuego. Los datos con los que se van a trabajar son de videojuegos de casi todos los años hasta la fecha. </p>
+                </div>
+                <div class="response">
+                    <h4>Fuente original de los datos</h4>
+                    <!-- Puedes agregar los P que sean necesarios -->
+                    <h4>Respuesta:</h4>
+                    <p>Los datos pertenecen a una base de datos de Kaggle (https://www.kaggle.com/code/juanpoma/estudio-de-base-de-datos-sobre-videojuegos/input), de la cual se descargó un archivo “vgsales.csv”, el cual contiene todos los datos asociados a los videojuegos, y también se descargó world.topojson (https://github.com/topojson/world-atlas)el cual contiene todos los datos asociados a las posiciones de los países del mundo. En cuanto a la disponibilidad del dataset, este es estático, ya que el dataset está disponible “all at one” a la hora de descargarlo. </p>
+                </div>
+                <div class="response">
+                    <h4>Usuario objetivo</h4>
+                    <!-- Puedes agregar los P que sean necesarios -->
+                    <h4>Respuesta:</h4>
+                    <p>Este trabajo está dirigido a cualquier persona que le interese el tema de los videojuegos, y más aún a aquellas personas que son entusiastas de este mundo, puesto que podrán indagar acerca de aquellos videojuegos que más les podrían interesar. </p>
+                </div>
+                <div class="response">
+                    <h4>Uso de la herramienta</h4>
+                    <!-- Puedes agregar los P que sean necesarios -->
+                    <h4>Respuesta:</h4>
+                    <p>Nuestra herramienta de visualización de datos beneficia a diferentes usuarios. Los analistas de datos pueden explorar la distribución y tendencias de los videojuegos por plataforma y editor, lo que les ayuda a tomar decisiones estratégicas. Los ejecutivos de la industria pueden obtener una visión panorámica del panorama competitivo e identificar oportunidades de colaboración. En resumen, esta herramienta brinda una forma intuitiva y visualmente atractiva de analizar datos de videojuegos, permitiendo a los usuarios obtener información valiosa y tomar decisiones informadas de manera eficiente. </p>
+                </div>
+
+        </div>
+
+        <div class="case">
+            <h2>Abstracción de datos</h2>
+                <div class="response">
+                    <h4>Tipos de datos a utilizar en el proyecto</h4>
+                    <!-- Puedes agregar los P que sean necesarios -->
+                    <h4>Respuesta:</h4>
+                    <p>En este proyecto, los atributos que se utilizaron fueron: Rank, Name, Platform, Year, Genre, Publisher, NA_Sales, EU_Sales, JP_Sales, Other_Sales. Cada uno tiene como significado lo siguiente, respectivamente:  </p>
+                    <ul>
+                        <li>Rank: El rango o posición del videojuego en el dataset. Representa su clasificación o posición relativa en términos de popularidad o ventas. </li>
+                        <li>Name: El nombre del videojuego. Es el título con el que se conoce al juego en cuestión. </li>
+                        <li>Platform: La plataforma en la que el videojuego está disponible. Puede ser una consola específica como PlayStation, Xbox, Nintendo Switch, o puede incluir también plataformas como PC (ordenador personal) o dispositivos móviles. </li>
+                        <li>Year: El año en el que el videojuego fue lanzado. Indica el año de su aparición en el mercado. </li>
+                        <li>Genre: El género al que pertenece el videojuego. Representa la categoría o tipo principal al que se atribuye el juego, como acción, aventura, deportes, estrategia, entre otros. </li>
+                        <li>Publisher: El editor o empresa que lanzó y distribuyó el videojuego. Es la compañía responsable de llevar el juego al mercado y gestionar su comercialización. </li>
+                        <li>NA_Sales: Las ventas del videojuego en América del Norte (por ejemplo, Estados Unidos y Canadá). Representa las ventas totales o en unidades del juego en esa región. </li>
+                        <li>EU_Sales: Las ventas del videojuego en Europa. Indica las ventas totales o en unidades del juego en países europeos. </li>
+                        <li>JP_Sales: Las ventas del videojuego en Japón. Representa las ventas totales o en unidades del juego en el mercado japonés. </li>
+                        <li>Other_Sales: Las ventas del videojuego en otras regiones o territorios no incluidos en las categorías anteriores. Puede englobar ventas en otros países o regiones como Asia, Oceanía, América Latina, entre otros. </li>
+                        <li>Global_Sales: Las ventas del videojuego en todo el mundo. Representa las ventas totales o en unidadeds del juego de manera global.</li>
+                    </ul>  
+                    <p>De estos datos, se pudieron identificar, 215774 items, los cuales cada uno poseían estos atributos. Existe un vínculo (relación) entre las regiones de venta y los names de los countries de los datos del archivo del world.topojson, el cual este último contenía datos espaciales, los cuales proveían con la ubicación exacta de un determinado país del mundo, y ciertos atributos más. Para todo esto fue de gran utilidad el framework de Tamara Munzner para poder responder la pregunta What? Y todas sus subpreguntas relacionadas. </p>
+                </div>
+                <div class="response">
+                    <h4>Tipos de atributos presente en los datos</h4>
+                    <!-- Puedes agregar los P que sean necesarios -->
+                    <h4>Respuesta:</h4>
+                    <p>Gran parte de los atributos presentes en los datos son ordenados cuantitativos, sin embargo, hay unos pocos que son categóricos (nominales), los cuales son: Name, Platform, Genre, y Publisher. Posteriormente, los tipos de atributos que se ocuparon son: </p>
+                    <ul>
+                        <li>Rank: cuantitativo – discreto - secuencial</li>
+                        <li>Name: categórico</li>
+                        <li>Platform: categórico</li>
+                        <li>Year: cuantitativo – discreto - secuencial</li>
+                        <li>Genre: categórico</li>
+                        <li>Publisher: categórico</li>
+                        <li>NA_Sales: cuantitativo – continuo- secuencial</li>
+                        <li>EU_Sales: cuantitativo – continuo- secuencial</li>
+                        <li>JP_Sales: cuantitativo – continuo- secuencial</li>
+                        <li>Other_Sales: cuantitativo – continuo - secuencial </li>
+                        <li>Global_Sales: cuantitativo – continuo - secuencial </li>
+                    </ul>
+                </div>
+        </div>
+
+        <div class="case">
+            <h2>Abstracción de tareas</h2>
+                <div class="response">
+                    <h4>Tarea 1 (acción + objetivo) + justificación según el dominio presentado</h4>
+                    <!-- Puedes agregar los P que sean necesarios -->
+                    <h4>Respuesta:</h4>
+                    <p>La primera tarea corresponde a presentar la visualización de un mapa del mundo. La acción que se realiza es la de seleccionar una región de este mapa, cuyo objetivo será el de poder filtrar sobre qué datos quiere el usuario, obtener la información con respecto dos consultas: cuáles son los juegos y cuáles son los géneros de juego más vendidos en la región seleccionada. Esta visualización tiene entonces como principal objetivo ser la base para permitir al usuario ampliar la cantidad de información que podrá observar, al permitirle seleccionar las distintas regiones del mapa. Esta tarea se relaciona con el dominio, ya que, al estar trabajando con un set de datos sobre videojuegos, podemos encontrar variaciones importantes si nos centramos en una región en específico, considerando las distintas culturas y el alcance que un videojuego puede tener. </p>
+                </div>
+                <div class="response">
+                    <h4>Tarea 2 (acción + objetivo) + justificación según el dominio presentado</h4>
+                    <!-- Puedes agregar los P que sean necesarios -->
+                    <h4>Respuesta:</h4>
+                    <p>La segunda tarea de nuestra herramienta trata de presentar un gráfico de pastel correspondiente a los géneros de videojuegos más vendidos en la región seleccionada en la tarea 1, esta tarea tiene dos objetivos, uno es el de llamar la atención del usuario con un gráfico fácil de entender y con una paleta de colores llamativa al ojo y el otro objetivo es el de mostrar al usuario uno de los principales atributos de nuestro set de datos. Esta tarea se justifica claramente a partir del dominio presentado, ya que presenta información sobre una de las características principales de un videojuego: su género. </p>
+                </div>
+                <div class="response">
+                    <h4>Tarea 3 (acción + objetivo) + justificación según el dominio presentado</h4>
+                    <!-- Puedes agregar los P que sean necesarios -->
+                    <h4>Respuesta:</h4>
+                    <p>Una tercera tarea corresponde a nuestra tercera herramienta de visualización, que es el gráfico de barras presentado para mostrar la cantidad de juegos por plataforma que ha creado la empresa seleccionada por el usuario. El objetivo de esta tarea es el de variar con respecto a la información presentada en las visualizaciones anteriores, ya que ambas corresponden a información sobre las ventas por región de los juegos, ya sea mostrando los juegos más vendidos o categorizándolos por género. Al mostrar ahora información relacionando a las empresas y a las plataformas, se logra evitar que el usuario sienta que las visualizaciones se vuelven repetitivas con respecto a los datos que se muestran. Al igual que la tarea anterior, se justifica esta tarea a partir del dominio, ya que la empresa que crea los videojuegos y la plataforma en la que se encuentran corresponden a datos de gran valor para un usuario que quiere saber sobre estos. </p>
+                </div>
+        </div>
+
+        <div class="case">
+            <h2>Codificación visual e interacciones</h2>
+                <div class="response">
+                    <h4>Decisiones de diseño relacionadas a la primera tarea visual</h4>
+                    <!-- Puedes agregar los P que sean necesarios -->
+                    <h4>Respuesta:</h4>
+                    <p>En cuanto a la primera tarea visual, se decidió hacer un mapa del mundo, el cual contuviera todos los países existentes, y que permitiera poder seleccionar alguna región que uno estime conveniente para así poder acceder a los datos de los juegos de dicha región, los cuales se desplegarían de 2 formas, una sería la segunda visualización, que sería un gráfico de torta (el cual será explicado en el siguiente apartado) el cual contiene ciertos géneros de los juegos, y otra sería una lista con el ranking de los 30 juegos más vendidos en dicha región. La justificación de la lista es para poder entregar información que podría ser de interés para aquellas personas que estén buscando los juegos más populares en cierta región en específico, o también, como se explicó anteriormente en el informe, podría ser de gran utilidad para aquellas personas que pertenezcan a una de esas empresas y que puedan ver sus competencias en cuanto a ventas. </p>
+                </div>
+                <div class="response">
+                    <h4>Decisiones de diseño relacionadas a la segunda tarea visual</h4>
+                    <!-- Puedes agregar los P que sean necesarios -->
+                    <h4>Respuesta:</h4>
+                    <p>En cuanto a la segunda tarea visual, se decidió hacer un gráfico de torta que contiene los 7 géneros de videojuegos más vendidos para una región en específica, la cual esta última se escoge mediante la primera visualización. La justificación de este gráfico es poder mostrar cómo se diferencian los géneros de una región con otra, para así poder identificar qué géneros son los que más se repiten entre regiones. </p>
+                </div>
+                <div class="response">
+                    <h4>Decisiones de diseño relacionadas a la tercera tarea visual</h4>
+                    <!-- Puedes agregar los P que sean necesarios -->
+                    <h4>Respuesta:</h4>
+                    <p>En cuanto a la tercera tarea visual, permite representar la cantidad de videojuegos por plataforma de cada editor, con el objetivo de mostrar de forma clara y comparativa la distribución de videojuegos entre plataformas y editores. Este tipo de gráfico permite visualizar de manera efectiva la cantidad de juegos para cada plataforma, utilizando la altura de las barras de forma proporcional a la cantidad de juegos asociados. La justificación de esto es que permite identifica las plataformas más populares y, además, proporciona una visión general de las preferencias de los jugadores en relación con las diferentes plataformas. Además, el diseño de barras adyacentes permite realizar comparaciones rápidas entre las plataformas y editores, lo que ayuda a identificar tendencias, detectar diferencias significativas y realizar análisis comparativos de manera intuitiva. </p>
+                </div>
+        </div>
+
+        <div class="case">
+            <h3>
+                <a href="../Visualizacion/vis.html">Enlace para acceder a la visualización</a>
+            </h3>
+        </div>
+
+</body>
+
+</html>

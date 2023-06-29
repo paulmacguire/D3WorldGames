@@ -564,9 +564,7 @@ function createVGGraph() {
       .style("font-size", "16px")
       .style("color", "black")
       .text(
-        `Cantidad de juegos por plataforma de ${publisherSelect.property(
-          "value"
-        )}`
+        `Number of games per platform: `
       );
 
     const barWidth = 50; // Ancho de las barras más pequeño
@@ -630,7 +628,7 @@ function createVGGraph() {
       .attr("transform", "rotate(-90)")
       .attr("text-anchor", "middle")
       .style("font-weight", "bold")
-      .text("Cantidad de videojuegos");
+      .text("Video Games amount");
 
     // Agregar título del eje X
     contenedor
@@ -639,7 +637,7 @@ function createVGGraph() {
       .attr("y", HEIGHT_3 - MARGIN.bottom)
       .attr("text-anchor", "middle")
       .style("font-weight", "bold")
-      .text("Plataforma");
+      .text("Platform");
 
     // Trasladar todo el contenedor más arriba
     contenedor.attr("transform", `translate(0, -500)`);
